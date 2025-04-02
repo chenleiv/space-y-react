@@ -1,0 +1,18 @@
+.landing-list {
+  display: grid;
+  grid-auto-columns: minmax(100px, auto);
+  gap: $spacing-lg;
+  padding: $spacing-md;
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: $wide-breakpoint) {
+  .landing-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: $spacing-xl;
+    padding: $spacing-lg;
+  }
+}

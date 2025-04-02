@@ -1,0 +1,205 @@
+.landing-container {
+  position: relative;
+  background: linear-gradient(135deg, rgba(12, 12, 12, 0.95), rgba(12, 12, 12, 0.85));
+  min-height: 100vh;
+  padding: $spacing-xl 0;
+  color: var(--neutral-100);
+
+  .back {
+    font-size: 2rem;
+    color: var(--neutral-100);
+    cursor: pointer;
+    transition: all $transition-normal;
+    padding: $spacing-sm;
+    border-radius: $border-radius-full;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    margin-left: 30px;
+
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateX(-4px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  .landing-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $spacing-xl;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    gap: $spacing-xl;
+
+    h1 {
+      &:first-child {
+        color: var(--accent-500);
+        font-size: 3rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: $spacing-lg;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        position: relative;
+        padding-bottom: $spacing-md;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100px;
+          height: 4px;
+          background: var(--accent-500);
+          border-radius: $border-radius-full;
+        }
+      }
+    }
+
+    h3 {
+      text-align: center;
+      color: var(--neutral-100);
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: $spacing-md;
+      opacity: 0.9;
+    }
+
+    .prev {
+      margin-bottom: $spacing-xl;
+      width: 100%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: $spacing-xl;
+      border-radius: $border-radius-lg;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all $transition-normal;
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-lg;
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      h1 {
+        text-align: center;
+        color: var(--neutral-100);
+        font-size: 2.25rem;
+        margin-bottom: $spacing-md;
+        text-shadow: none;
+        padding-bottom: 0;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    .Failures, .Details {
+      margin-bottom: $spacing-xl;
+      width: 100%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: $spacing-xl;
+      border-radius: $border-radius-lg;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all $transition-normal;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-lg;
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      h2 {
+        color: var(--accent-500);
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: $spacing-lg;
+        text-align: center;
+      }
+
+      p {
+        color: var(--neutral-300);
+        line-height: 1.6;
+        margin-bottom: $spacing-md;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+.link {
+  color: var(--primary-400);
+  text-decoration: none;
+  transition: all $transition-fast;
+  position: relative;
+  
+  &:hover {
+    color: var(--primary-300);
+    
+    &::after {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-400);
+    transition: all $transition-fast;
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: $wide-breakpoint) {
+  .landing-details {
+    padding: $spacing-xl * 2;
+
+    h1 {
+      &:first-child {
+        font-size: 3.5rem;
+      }
+    }
+
+    .prev h1 {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .landing-container {
+    .back {
+      top: $spacing-sm;
+      left: $spacing-sm;
+      font-size: 1.5rem;
+    }
+  }
+
+  .landing-details {
+    padding: $spacing-lg;
+
+    h1 {
+      &:first-child {
+        font-size: 2.5rem;
+      }
+    }
+
+    .prev h1 {
+      font-size: 2rem;
+    }
+  }
+}
+

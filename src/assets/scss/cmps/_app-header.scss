@@ -1,0 +1,36 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-md $spacing-xl;
+  color: var(--neutral-100);
+  background: var(--primary-600);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: $spacing-md;
+  height: $navHeight;
+  box-shadow: $shadow-lg;
+  transition: all $transition-normal;
+
+  .logo {
+    margin-left: $spacing-xl;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--neutral-100);
+    transition: transform $transition-fast;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  @media screen and (min-width: $normal-breakpoint) {
+    font-size: 1.25rem;
+    margin-bottom: $spacing-xl;
+    padding: $spacing-lg $spacing-xl;
+
+    .logo {
+      font-size: 1.75rem;
+    }
+  }
+}
